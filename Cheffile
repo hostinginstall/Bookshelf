@@ -9,9 +9,8 @@ site 'http://community.opscode.com/api/v1'
 cookbook 'chef-client'
 #cookbook 'chef-server'
 cookbook 'whitelist-node-attrs',
-  :git => 'https://github.com/opscode/whitelist-node-attrs'
-cookbook 'chef-utils',
-	:git => "https://github.com/facebook/chef-utils"
+	:git => 'https://github.com/opscode/whitelist-node-attrs'
+#"https://github.com/facebook/chef-utils"
 
 
 
