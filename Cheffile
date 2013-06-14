@@ -1,0 +1,311 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+
+
+# Chef
+cookbook 'chef-client'
+#cookbook 'chef-server'
+cookbook 'whitelist-node-attrs',
+  :git => 'https://github.com/opscode/whitelist-node-attrs'
+cookbook 'chef-utils',
+	:git => "https://github.com/facebook/chef-utils"
+
+
+
+# User
+cookbook 'sudo'
+cookbook 'user'
+cookbook 'users'
+cookbook 'tmux'
+cookbook 'screen'
+cookbook 'zsh'
+cookbook 'htop'
+cookbook 'vim'
+cookbook 'git'
+cookbook 'dotfiles',
+	:git => 'https://github.com/koodough/chef-dotfiles'
+#cookbook 'workstation',
+	#:git => "https://github.com/jtimberman/workstation-chef-repo"
+
+
+
+#Solo
+cookbook 'chef-solo-search',
+	:git => 'https://github.com/edelight/chef-solo-search'
+
+
+
+# System
+cookbook 'hostname'
+	#:git => "https://github.com/3ofcoins/chef-cookbook-hostname"
+cookbook 'hosts_file'
+cookbook 'hosts-awareness'
+cookbook 'chef-denyhosts',
+	:git => 'https://github.com/carlo/chef-denyhosts'
+#https://github.com/customink-webops/hostsfile
+cookbook 'lvm'
+cookbook 'multipath',
+	:git => "https://github.com/atomic-penguin/cookbook-multipath"
+cookbook 'lxc' # Linux containers
+cookbook 'zfs'
+cookbook 'resolver'
+cookbook 'cron'
+cookbook 'ufw', '0.6.1'
+cookbook 'motd-tail'
+cookbook 'mosh' 
+	#:git => 'https://github.com/jtimberman/mosh-cookbook'
+cookbook 'openssh',
+	:git => 'https://github.com/koodough/openssh'
+cookbook 'runit', # Runit is a process supervision suite. /etc/init.d/
+	:git => "https://github.com/opscode-cookbooks/runit"
+cookbook 'ssh-keys',
+ 	:git => "https://github.com/cburroughs/chef-ssh-keys"
+cookbook 'chef-base', # Timezone, Hostname, kernel modules
+	:git => 'https://github.com/alno/chef-base'
+cookbook "certificate",
+	:git => "https://github.com/atomic-penguin/cookbook-certificate"
+cookbook 'backup-manager'
+cookbook 'backup',
+	:git => 'https://github.com/cramerdev/backup-cookbook'
+
+
+
+# Security / Monitoring
+cookbook 'fail2ban',
+	:git => "https://github.com/koodough/fail2ban"
+cookbook 'ossec'
+cookbook 'selinux'
+cookbook 'snort'
+cookbook 'logwatch'
+cookbook 'icinga',
+	:git => 'https://github.com/adcloud/icinga-cookbook'
+cookbook 'ganglia_cluster'
+cookbook 'monit'
+cookbook 'collectd'
+cookbook 'piwik'
+#cookbook 'chef-authbind', # Install the authbind tool to facilitate launching applications on privileged ports
+	#:git => 'https://github.com/realityforge/chef-authbind'
+
+
+
+# Services #
+cookbook 'apache2'
+cookbook 'bind',
+	:git => "https://github.com/atomic-penguin/cookbook-bind"
+cookbook 'bind10', 
+	:git => "https://github.com/mswart/chef-bind10"
+cookbook 'nginx'
+cookbook 'php',
+	:git => 'https://github.com/opscode-cookbooks/php'
+cookbook 'php-fpm',
+	:git => 'https://github.com/yevgenko/cookbook-php-fpm'
+#cookbook 'php',
+	#:git => 'https://github.com/priestjim/chef-php'
+cookbook 'database'
+cookbook 'mysql'
+cookbook 'phpmyadmin',
+	:git => 'https://github.com/koodough/chef-phpmyadmin'
+cookbook 'postgresql'
+cookbook 'phppgadmin',
+	:git => "https://github.com/koodough/chef-phppgadmin"
+cookbook 'oracle',
+	:git => "https://github.com/atomic-penguin/cookbook-oracle"
+cookbook 'nfs' # https://github.com/atomic-penguin/cookbook-nfs
+cookbook 'cassandra'
+cookbook 'riak',
+	:git => "https://github.com/basho/riak-chef-cookbook"
+cookbook 'samba'
+cookbook 'openldap',
+	:git => 'https://github.com/koodough/openldap'
+cookbook 'x-windows',
+	:git => "https://github.com/atomic-penguin/cookbook-x-windows"
+cookbook 'squid'
+cookbook 'openvpn',
+	:git => 'https://github.com/koodough/openvpn'
+cookbook 'tor',
+	:git => "https://github.com/koodough/chef-tor"
+cookbook 'drbd'
+cookbook 'znc'
+cookbook 'heartbeat'
+cookbook 'keepalived'
+cookbook 'pxe_dust'
+cookbook 'irc-handler',
+	:git => 'https://github.com/bflad/chef-irc_handler'
+
+
+
+# Communication
+cookbook 'postfix'
+cookbook 'inspircd',
+	:git => 'https://github.com/aktowns/chef-cookbook-inspircd'
+cookbook 'mumble'
+cookbook 'murmur',
+	:git=> "https://github.com/promisedlandt/cookbook-murmur"
+#cookbook 'asterisk',
+	#:git => 'https://github.com/peplin/asterisk-cookbook'
+cookbook 'minecraft-cookbook',
+	:git => 'https://github.com/txus/minecraft-cookbook'
+cookbook 'rtorrent',
+	:git => 'https://github.com/gchef/rtorrent-cookbook'
+cookbook 'transmission',
+	:git => 'https://github.com/opscode-cookbooks/transmission'
+
+
+
+# Web Applications
+cookbook 'dnsimple',
+	:git => 'https://github.com/aetrion/chef-dnsimple'
+cookbook "etherpad-lite",
+	:git => "https://github.com/OpenWatch/etherpad-lite-cookbook.git"
+cookbook 'gitlab',
+	:git => "https://github.com/koodough/gitlab-cookbook"
+	#:git => "https://github.com/andruby/gitlab-cookbook.git"
+	#:git => "https://github.com/dosire/cookbook-gitlab"
+cookbook 'magento',
+	:git => "https://github.com/yevgenko/cookbook-magento"
+cookbook 'mediawiki',
+	:git => 'https://github.com/crekev/cookbook-for-mediawiki'
+#cookbook "omeka",
+	#:git => 'https://github.com/scholarslab/cookbooks/tree/master/omeka'
+	#:git => 'https://github.com/ccat/cookbook-for-mediawiki'
+	##:git => 'https://github.com/nxhack/chef/tree/master/cookbooks/conf-MediaWiki'
+	#https://github.com/flaccid/cookbooks/blob/master/cookbooks/mediawiki_application/README.md
+#cookbook 'mediawiki-EC2',
+	#:git => 'https://github.com/pdam/mediawiki'
+cookbook 'buildbot',
+	:git => 'https://github.com/juanje/cookbook-buildbot'
+
+
+
+# Programs
+cookbook 'ffmpeg',
+	:git => 'https://github.com/enmasse-entertainment/ffmpeg-cookbook'
+#cookbook 'metachef', # Cluster orchestration -- coordinates discovery, integration and decoupling of cookbooks
+	#:git => "https://github.com/Youscribe/metachef-cookbook"
+cookbook 'nyan-cat'
+
+
+
+# Distro
+## RHEL / CentOS
+cookbook 'yum'
+cookbook 'yumrepo'
+
+
+
+## Gentoo
+cookbook "gentoo",
+	:git => "https://github.com/koodough/gentoo.git"
+cookbook "eix",
+	:git => "https://github.com/koodough/eix"
+
+
+
+## Debian
+cookbook 'debian_cookbook',
+	:git => 'https://github.com/Youscribe/debian-cookbook'
+
+
+
+# Language
+## Ruby
+cookbook 'ruby_build',
+	:git => "https://github.com/fnichol/chef-ruby_build"
+cookbook 'rbenv',
+	:git => "https://github.com/fnichol/chef-rbenv"
+#cookbook 'rbenv',
+	#:git => "https://github.com/RiotGames/rbenv-cookbook"
+# cookbook 'rvm',
+#   :git => 'https://github.com/fnichol/chef-rvm'
+cookbook 'rake',
+	:git => 'https://github.com/nathanstitt/chef-recipe-rake'
+cookbook 'gems', #Sets up a local gem server repository.
+	:git => "https://github.com/opscode-cookbooks/gems"
+
+
+
+## Java
+cookbook 'java'
+cookbook 'tomcat'
+cookbook 'jetty'
+cookbook 'maven',
+	:git => 'https://github.com/opscode-cookbooks/maven'
+
+
+
+## Golang
+cookbook 'chef-golang',
+	:git => 'https://github.com/joshholt/chef-golang'
+cookbook 'golang',
+	:git => 'https://github.com/michaelklishin/go-language-chef-cookbook'
+
+
+
+# Virtual
+cookbook 'nova',
+	:git => "https://github.com/opscode-cookbooks/nova"
+cookbook "osops-utils",
+	:git => "https://github.com/odyssey4me/osops-utils"
+
+cookbook 'vagrant',
+	:git => 'https://github.com/jtimberman/vagrant-cookbook'
+
+cookbook "virtualbox",
+	:git => "https://github.com/peplin/virtualbox-cookbook"
+cookbook "xen",
+	:git => "https://github.com/jellybob/xen-cookbook"
+#cookbook 'xen'
+#https://github.com/openstack/openstack-chef/tree/master/cookbooks/xenserver
+
+
+
+# Windows Cookbooks #
+cookbook 'windows'
+ #https://github.com/opscode-cookbooks/windows
+cookbook 'windows-hostname',
+	:git => 'https://github.com/sbergmann/chef-cookbook-windows-hostname'
+cookbook 'powershell'
+#https://github.com/opscode-cookbooks/powershell
+
+#https://github.com/opscode/knife-windows
+cookbook 'cygwin',
+:git => "https://github.com/lapresse/chef-cygwin.git"
+cookbook 'IIS'
+cookbook 'mssql',
+	:git => 'https://github.com/opscode-cookbooks/sql_server'
+cookbook 'ad'
+
+
+
+#Debugging
+#https://github.com/opscode/test-kitchen
+#https://github.com/acrmp/foodcritic
+
+
+
+#TODO cookbook 
+#cookbook 'truecrypt'
+#cookbook 'synergy'
+#cookbook 'blender'
+#cookbook 'openvswitch' #http://openvswitch.org
+
+# cookbook 'apache2', '>= 1.0.0'
+
+#Other Non cookbook Repos
+
+
+# cookbook 'postgresql',
+#   :git => 'https://github.com/findsyou/cookbooks',
+#   :ref => 'postgresql-improvements'
+#   
+#https://github.com/facebook/chef-utils
+#
+##cookbook 'travis',
+	#:git => 'https://github.com/travis-ci/travis-cookbooks'
+
+#Kitchen::Vagrant
+#A Test Kitchen Driver for Vagrant.
+#https://github.com/opscode/kitchen-vagrant
